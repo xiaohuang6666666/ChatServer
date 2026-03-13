@@ -1,0 +1,9 @@
+# 定义包含该目录下所有源文件的变量SRC_LIST
+aux_source_directory(. SRC_LIST)
+
+# 可执行文件
+add_executable(ChatClient ${SRC_LIST})
+
+# 指定可执行文件链接时需要依赖的库文件
+# 简写库名，省去前面的lib和后面的.so(或.a)
+target_link_libraries(ChatClient pthread)
